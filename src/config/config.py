@@ -66,7 +66,7 @@ class Config():
         
         
         self.num_epoch = 20
-        self.batch_size = 128 
+        self.batch_size = 64 # 128 
         
         # self.batch_size = 2048 # val 
         
@@ -82,7 +82,7 @@ class Config():
         
         # print and save
         self.print_every = 10
-        self.val_every = 1000  # 根据batch size变化; 1314380 //  128 = 10268
+        self.val_every = 2000  # 根据batch size变化; 1314380 //  128 = 10268;  1314380 / 64 = 20537
         self.force_save_every = None
         self.val_num = None
 

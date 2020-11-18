@@ -167,7 +167,7 @@ class Trainer(object):
                     print_cnt += 1 
     
                     self.config.logger.info('epoch {}, iteration {}, '
-                        'train_mean_example_loss: {:.4f}, '
+                        'train_mean_example_loss: {:.4f}'
                         .format(epoch + 1, batch_idx + 1, train_loss))
                     
                 # val
