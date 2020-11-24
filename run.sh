@@ -1,5 +1,6 @@
 export PYTHONNOUSERSITE=True
 conda activate BERT4NLU
+export PYTHONPATH=$PYTHONPATH:./
 
 
 
@@ -17,7 +18,10 @@ CUDA_VISIBLE_DEVICES=2,3 python src/main.py
 
 
 # val
+# modify src/config/config.py
 CUDA_VISIBLE_DEVICES=2,3 python src/main.py
 
 
+# tensorboard
+tensorboard --logdir resource/records/personachat/run1/log --port 6006
 

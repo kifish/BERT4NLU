@@ -232,7 +232,7 @@ class Batcher(object):
         return b_input_ids, b_masks, b_type_ids, b_label
     
 
-
+# Batcher的cache 版本
 class Batcher_v2(object):
     
     def __init__(self, config: dict) -> None:        
@@ -409,7 +409,7 @@ class Batcher_v3(object):
                 idx = idx % 2
                 tmp = [self.user_ids[idx]] + utterance_ids
                 flatten_context_ids += tmp
-                context_type_ids += len(tmp) * [self.user_ids[idx]]
+                context_type_ids += len(tmp) * [self.user_ids[idx]] # 与Batcher 不一样
                 
             resp = ex['response']
             resp = self.tokenize(resp) 
@@ -437,11 +437,6 @@ class Batcher_v3(object):
         b_label = torch.tensor(b_label, device=self.device, dtype=torch.long) # 1-d tensor 
         return b_input_ids, b_masks, b_type_ids, b_label
     
-
-
-
-
-
 
 
 
